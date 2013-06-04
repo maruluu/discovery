@@ -1,16 +1,24 @@
 'use strict';
 
-angular.module('discoverApp')
-  .factory('GithubService', function () {
+angular.module('GithubService', ['ngResource'])
+  .factory('GithubResource', function ($resource) {
     // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
+    var github = $resource(
+    'https://api.github.com/:query/:user/:repo/:spec',
+      {
+        'query': 'users',
+        'user' : 'addyosmani',
+        'repo' : 'repos',
+        'spec' : '',
+        'callback' : 'JSON_CALLBACK',
+        'per_page' : 100
+      }, {
+        'get' : {
+          'method' : 'JSONP'
+        }
       }
-    };
+    );
+
+    return github;
+
   });
