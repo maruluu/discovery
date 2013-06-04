@@ -4,7 +4,7 @@ angular.module('discoverApp', ['GithubService', 'GithubDirective'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/search.html',
         controller: 'MainCtrl'
       })
       .otherwise({

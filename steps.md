@@ -44,7 +44,11 @@ $ yo angular:view search
 
 $ yo angular:view repository
    create app/views/repository.html
-   
+
 $ yo angular:view about
    create app/views/about.html
 
+and also
+
+$ yo angular:view user
+   create app/views/user.html
