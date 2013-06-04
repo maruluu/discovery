@@ -14,4 +14,11 @@ I now want to use Pure
 	Wish we could just have access to Pure.css or pure.min.css
 	Ahh. So you can get it. Just need to npm install and grunt build - could be clearer.
 
+Create a service
+	yo angular:service Github
+	Created app/scripts/services/Github.js and test/spec/services/Github.js
+	Was expecting it to be called GithubService but it was just Service
+
+
+
 
