@@ -13,6 +13,7 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="components/pure/build/pure-min.css">
+    <link rel="stylesheet" href="styles/email.css">
     <!-- endbuild -->
   </head>
   <body ng-app="discoverApp">
@@ -25,8 +26,12 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+
+    <div class="content pure-g-r">
+      <!-- Add your site or application content here -->
+      <div class="container" ng-view></div>
+    </div>
+
 
     <!-- Angular resources -->
     <script src="components/angular/angular.js"></script>
