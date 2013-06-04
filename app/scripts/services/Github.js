@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('discoverApp')
-  .factory('Github', function () {
+  .factory('GithubService', function () {
     // Service logic
     // ...
 

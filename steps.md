@@ -20,5 +20,9 @@ Create a service
 	Was expecting it to be called GithubService but it was just Service
 
 
-
-
+Create a directive
+	yo angular:directive Github
+   	create app/scripts/directives/Github.js
+   	create test/spec/directives/Github.js
+   	Again, expected the directive to include the name of the component
+   	so GithubDirective
