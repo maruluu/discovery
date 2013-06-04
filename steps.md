@@ -35,3 +35,16 @@ Now nothing is loaded up after renaming directives and services (just within the
 
 Looks like I wanted to create distinct components but the generator suggests doing everything under the same namespace.
 
+Adding in code for directives and services.
+
+Create views for each sub-page
+
+$ yo angular:view search
+   create app/views/search.html
+
+$ yo angular:view repository
+   create app/views/repository.html
+   
+$ yo angular:view about
+   create app/views/about.html
+
