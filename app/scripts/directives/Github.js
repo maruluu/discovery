@@ -1,12 +1,17 @@
 'use strict';
 
-angular.module('discoverApp')
-  .directive('GithubComponent', function () {
+angular.module('GithubDirective', [])
+  .directive('tabs', function () {
     return {
-      template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the Github directive');
-      }
+    	restrict: 'E',
+    	// transclusion consists of plucking out the content of a 
+    	// custom directive, processing it against right scope and 
+    	// then placing it at a marked position in the template of 
+    	// that directive
+    	transclude: true,
+    	scope: {},
+    	controller: function($scope, $element){
+    		var panes = $scope.panes = [];
+    	}
     };
   });

@@ -26,3 +26,12 @@ Create a directive
    	create test/spec/directives/Github.js
    	Again, expected the directive to include the name of the component
    	so GithubDirective
+
+
+Suddenly ran into an issue with angular-resource breaking LiveReload. Had to
+sudo bower install after a clean-up in order to get it playing nicely again.
+
+Now nothing is loaded up after renaming directives and services (just within their modules). Something weird going on.
+
+Looks like I wanted to create distinct components but the generator suggests doing everything under the same namespace.
+

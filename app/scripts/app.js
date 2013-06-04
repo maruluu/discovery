@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('discoverApp', [])
+angular.module('discoverApp', ['GithubService', 'GithubDirective'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
