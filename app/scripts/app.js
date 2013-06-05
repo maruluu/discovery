@@ -1,25 +1,26 @@
 'use strict';
 
-angular.module('discoverApp', ['GithubService', 'GithubDirective'])
+angular.module('discoverApp', ['GithubService', 'GithubComponents'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/search.html',
-        controller: 'MainCtrl'
+        controller: 'ctrl.Search'
       })
       .when('/github/:user',{
         templateUrl: 'views/gh/user.html',
-        controller: 'UserCtrl'
+        controller: 'ctrl.GithubUserReposGists'
       })
       .when('/github/:user/:repo',{
         templateUrl: 'views/gh/repository.html',
-        controller: 'RepoCtrl'
+        controller: 'ctrl.GithubRepoInfoContributors'
       })
       .when('/about', {
         templateUl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'ctrl.About'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
+

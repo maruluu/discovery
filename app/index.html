@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="discoverApp" id="ng-app"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/search-widget.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="discoverApp">
+  <body ng-controller="ctrl.App">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -26,11 +26,36 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+<!--temp-->
 
-    <div class="content pure-g-r">
-      <!-- Add your site or application content here -->
-      <div class="container" ng-view></div>
+
+<h2>Discovery</h2>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">AngularJS - GitHub Info</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="{{searchNotActive}}active"><a ng-href="#{{searchUrlPath}}"><i class="icon-search icon-white"></i> Search</a></li>
+            <li class="{{aboutNotActive}}active"><a href="#/about"><i class="icon-question-sign icon-white"></i> About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
     </div>
+  </div>  
+
+  <!--end temp-->
+
+  <div class="container">
+    <div id="github-app" ng-view></div>
+  </div>
+
 
 
     <!-- Angular resources -->
