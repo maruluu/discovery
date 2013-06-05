@@ -52,3 +52,11 @@ and also
 
 $ yo angular:view user
    create app/views/user.html
+
+
+Adding templates for search
+Adding an initial menu, but not linking anywhere for now
+Adding a new directory 'gh' for github specific templates to the views directory
+
+Populating app/views/gh with templates - these are borrowed from another github client application:
+

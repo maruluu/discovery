@@ -1,0 +1,34 @@
+
+.discovery-search .text-box {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+}
+
+.discovery-search .form-box {
+    text-align: center;
+    font-size: 120%;
+    border-bottom: 1px solid #eee;
+}
+
+.discovery-search .form-box .pure-button {
+        background-color: #61B842;
+        color: white;
+        vertical-align: top;
+        font-size: 85%;
+        font-weight: bold;
+        text-shadow: 0px 1px 1px rgb(35, 111, 31);
+        border-radius: 4px;
+    }
+
+
+@media (max-width: 767px) {
+    .discovery-search  .text-box {
+        text-align: center;
+    }
+
+
+    .discovery-search .text-box {
+        height: auto;
+    }
+}

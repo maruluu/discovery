@@ -8,11 +8,11 @@ angular.module('discoverApp', ['GithubService', 'GithubDirective'])
         controller: 'MainCtrl'
       })
       .when('/github/:user',{
-        templateUrl: 'views/user.html',
+        templateUrl: 'views/gh/user.html',
         controller: 'UserCtrl'
       })
       .when('/github/:user/:repo',{
-        templateUrl: 'views/repository.html',
+        templateUrl: 'views/gh/repository.html',
         controller: 'RepoCtrl'
       })
       .when('/about', {
