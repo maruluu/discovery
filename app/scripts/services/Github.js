@@ -11,7 +11,7 @@ angular.module('GithubService', ['ngResource'])
         'repo' : 'repos',
         'spec' : '',
         'callback' : 'JSON_CALLBACK',
-        'per_page' : 3 // results per page
+        'per_page' : 10 // results per page
       }, {
         'get' : {
           'method' : 'JSONP'

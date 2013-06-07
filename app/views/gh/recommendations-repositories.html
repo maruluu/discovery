@@ -6,7 +6,7 @@
       <!-- @begin: repository name and description -->
       <ul class="repo-name">
         <li>
-          <h3><a href="#/github/{{repo.full_name}}/">{{repo.name}}</a></h3>
+          <h3><a href="#/github/{{repo.url.replace('https://github.com/','')}}/">{{repo.name}}</a></h3>
           <span class="visible-desktop repo-line-desc" ng-show="repo.description">{{repo.description}}</span>
         </li>
       </ul>

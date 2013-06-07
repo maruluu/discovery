@@ -1,5 +1,7 @@
 <div class="container">
 
+  <h2>Recommendations</h2>
+
   <div ng-hide="user.data">
     <p style="text-align:center"><img src="img/loading.gif"></p>    
   </div>
@@ -20,11 +22,13 @@
   <!-- @begin: user found -->
   <div ng-show="user.data.login">
 
+<!--
     <div class="row" ng-include="'views/gh/user-information.html'"></div>
+-->
+
     <div class="row">
 
       <tabs>
-        Recommendations
         <pane title="Public Repositories {{checkLength(repos.data.repositories)}}">
           <div ng-include="'views/gh/recommendations-repositories.html'"></div>
         </pane>
