@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div ng-hide="user.data">
+    <p style="text-align:center"><img src="img/loading.gif"></p>    
+  </div>
+
+  <!-- @begin: user not found -->
+  <div class="row" ng-show="user.data.message">
+
+    <ul class="breadcrumb">
+      <li><i class="icon-search"></i> <a href="#">Search Other</a></li>
+    </ul>
+
+    <p style="text-align:center"><img src="img/user.png"></p>
+    <p style="text-align:center">User Not Found</p>
+
+  </div>
+  <!-- @end: user not found -->
+
+  <!-- @begin: user found -->
+  <div ng-show="user.data.login">
+
+    <div class="row" ng-include="'views/gh/user-information.html'"></div>
+    <div class="row">
+
+      <tabs>
+        <pane title="Public Repositories {{checkLength(repos.data)}}">
+          <div ng-include="'views/gh/user-repositories.html'"></div>
+        </pane>
+      </tags>
+
+    </div>
+
+  </div>
+  <!-- @end: user found -->
+
+</div>

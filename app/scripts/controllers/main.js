@@ -54,11 +54,17 @@ Ctrl = (function() {
     $scope.updateSearchUrl('/');
 
     $scope.searchAction = function() {
-      var user = $scope.searchField || 'addyosmani';
-      
-      console.log('search user: ' + user);
 
-      $location.path(['', 'github', user, ''].join('/'));
+      // User search
+      var keyword = encodeURIComponent($scope.searchField);
+      
+      if (keyword.length !== 0 && keyword !== undefined && keyword !== "undefined"){
+        console.log('search user: ' + keyword);
+        $location.path(['', 'github', keyword, ''].join('/'));        
+      }else{
+        console.log('No user supplied');
+      }
+
     }
 
   }
@@ -75,10 +81,40 @@ Ctrl = (function() {
 
   //-----------------------------------------------------------------
 
-  Ctrl.prototype.GithubUserReposGists = function($scope, $routeParams, GithubResource) {
+  Ctrl.prototype.GithubUserReposGists = function($scope, $routeParams, GithubResource, Search) {
 
     var userParam = $routeParams.user
       , urlPath = ['', 'github', userParam, ''].join('/');
+
+
+    function addSeedData(data){
+      
+      var seedData = data;
+      var seedString = "";
+      console.log(seedData);
+
+      seedData.forEach(function(obj){  
+        seedString += obj.name + " OR ";
+      });
+
+      // $location.path(['', 'github', userParam, 'recommendations'].join('/'));  
+      // 'https://api.github.com/:query/:user/:repo/:spec',
+      // /legacy/repos/search/:keyword
+/*
+      Search.get(
+        {keyword: 'jquery'}, 
+        function(res) {
+          $scope.user = res;
+          console.log('Recommendations : user info returned', res);
+        }
+      );
+*/
+
+      //
+
+      console.log(seedString, 'final');
+    }
+    ///
 
     // access parent scope function
     $scope.updateSearchUrl(urlPath);
@@ -93,7 +129,7 @@ Ctrl = (function() {
       {user: userParam, repo: ''}, 
       function(res) {
         $scope.user = res;
-        console.log('GithubUserReposGists : user info returned');
+        console.log('GithubUserReposGists : user info returned', res);
       }
     );
 
@@ -105,7 +141,8 @@ Ctrl = (function() {
       {user: userParam},
       function(res) {
         $scope.repos = res;
-        console.log('GithubUserReposGists : user repos returned');
+        console.log('GithubUserReposGists : user repos returned', res);
+        addSeedData(res.data);
       }
     );
     
@@ -123,7 +160,7 @@ Ctrl = (function() {
       'repo': 'gists'
     }, function(res) {
       $scope.gists = res;
-      console.log('GithubUserReposGists : user gists returned');
+      console.log('GithubUserReposGists : user gists returned', res);
     });
     
     $scope.publicRepoForms = {
@@ -209,6 +246,10 @@ Ctrl = (function() {
     });  
 
     //---
+
+    
+
+    //----
 
     $scope.contributionsTitle = function(contributor) {
       var contributionStr = 'Contribution'

@@ -7,11 +7,11 @@ angular.module('GithubService', ['ngResource'])
     'https://api.github.com/:query/:user/:repo/:spec',
       {
         'query': 'users',
-        'user' : 'addyosmani',
+        'user' : 'addyosmani', //default
         'repo' : 'repos',
         'spec' : '',
         'callback' : 'JSON_CALLBACK',
-        'per_page' : 10
+        'per_page' : 3 // results per page
       }, {
         'get' : {
           'method' : 'JSONP'
