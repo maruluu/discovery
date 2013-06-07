@@ -24,8 +24,9 @@
     <div class="row">
 
       <tabs>
-        <pane title="Public Repositories {{checkLength(repos.data)}}">
-          <div ng-include="'views/gh/user-repositories.html'"></div>
+        Recommendations
+        <pane title="Public Repositories {{checkLength(repos.data.repositories)}}">
+          <div ng-include="'views/gh/recommendations-repositories.html'"></div>
         </pane>
       </tags>
 

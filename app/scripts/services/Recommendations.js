@@ -8,7 +8,7 @@ angular.module('Recommendations', ['ngResource'])
       {
         'keyword' : 'jquery',
         'callback' : 'JSON_CALLBACK',
-        'per_page' : 3 // results per page
+        'per_page' : 20 // results per page
       }, {
         'get' : {
           'method' : 'JSONP'

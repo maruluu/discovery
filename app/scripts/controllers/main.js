@@ -81,6 +81,46 @@ Ctrl = (function() {
 
   //-----------------------------------------------------------------
 
+
+
+  Ctrl.prototype.GithubUserRecommendations = function($scope, $routeParams, Search) {
+
+    //window.seedString = "jquery";
+
+    if(window.seedString){
+
+      var userParam = $routeParams.user;
+      var urlPath = ['', 'github', userParam, 'recommendations'].join('/');
+
+
+       Search.get(
+          {keyword: window.seedString.replace(/^(.*) OR(.*?)$/, '$1$2'), sort: 'updated'}, //sort by updated, stars or forks 
+          function(res) {
+            $scope.user = window.user;
+            $scope.repos = res; // res.data?
+            console.log('GithubUserRecommendations : user info returned', res);
+          }
+        );
+
+      // access parent scope function
+      $scope.updateSearchUrl(urlPath);
+
+
+    }else{
+      console.error('No seed data available');
+    }
+
+
+  }
+
+  //-----------------------------------------------------------------
+
+
+/*
+https://api.github.com/legacy/repos/search/addyosmani.github.com%20OR%20backbone%20OR%20angular?callback=jQuery1708796868692152202_1370603971221&&_=1370604046385
+
+*/
+
   Ctrl.prototype.GithubUserReposGists = function($scope, $routeParams, GithubResource, Search) {
 
     var userParam = $routeParams.user
@@ -89,30 +129,17 @@ Ctrl = (function() {
 
     function addSeedData(data){
       
-      var seedData = data;
-      var seedString = "";
-      console.log(seedData);
+      window.seedString = "";
+      console.log('seed data', data);
 
-      seedData.forEach(function(obj){  
-        seedString += obj.name + " OR ";
-      });
+      if(data){
 
-      // $location.path(['', 'github', userParam, 'recommendations'].join('/'));  
-      // 'https://api.github.com/:query/:user/:repo/:spec',
-      // /legacy/repos/search/:keyword
-/*
-      Search.get(
-        {keyword: 'jquery'}, 
-        function(res) {
-          $scope.user = res;
-          console.log('Recommendations : user info returned', res);
-        }
-      );
-*/
+        data.forEach(function(obj){  
+          //window.seedString += encodeURIComponent(obj.name) + "+OR+";
+          window.seedString += obj.name + ' OR ';
+        });
 
-      //
-
-      console.log(seedString, 'final');
+      }
     }
     ///
 
@@ -129,6 +156,7 @@ Ctrl = (function() {
       {user: userParam, repo: ''}, 
       function(res) {
         $scope.user = res;
+        window.user = res;
         console.log('GithubUserReposGists : user info returned', res);
       }
     );

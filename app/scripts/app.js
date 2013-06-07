@@ -15,9 +15,9 @@ angular.module('discoverApp', ['GithubService', 'GithubComponents', 'Recommendat
         templateUrl: 'views/gh/repository.html',
         controller: 'ctrl.GithubRepoInfoContributors'
       })
-      .when('/github/:user/:recommendations',{
+      .when('/:user/recommendations',{
         templateUrl: 'views/gh/recommendations.html',
-        controller: 'ctrl.GithubRecommendations'
+        controller: 'ctrl.GithubUserRecommendations'
       })
       .when('/about', {
         templateUl: 'views/about.html',
