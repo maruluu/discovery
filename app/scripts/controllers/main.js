@@ -82,12 +82,9 @@ Ctrl = (function() {
   //-----------------------------------------------------------------
 
 
-
   Ctrl.prototype.GithubUserRecommendations = function($scope, $routeParams, Search) {
 
-    //window.seedString = "jquery";
-
-    if(window.seedString){
+    if(typeof window.seedString !== 'undefined' && window.seedString.hasOwnProperty('length')){
 
       var userParam = $routeParams.user;
       var urlPath = ['', 'github', userParam, 'recommendations'].join('/');
@@ -115,11 +112,6 @@ Ctrl = (function() {
 
   //-----------------------------------------------------------------
 
-
-/*
-https://api.github.com/legacy/repos/search/addyosmani.github.com%20OR%20backbone%20OR%20angular?callback=jQuery1708796868692152202_1370603971221&&_=1370604046385
-
-*/
 
   Ctrl.prototype.GithubUserReposGists = function($scope, $routeParams, GithubResource, Search) {
 
