@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ratchet template page</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Set Apple icons for when prototype is saved to home screen -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="touch-icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="touch-icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="touch-icons/apple-touch-icon-57x57.png">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link rel="stylesheet" href="ratchet.css">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="ratchet.js"></script>
+
+    <!-- Intro paragraph styles. Delete once you start using this page -->
+    <style type="text/css">
+        .welcome {
+          line-height: 1.5;
+          color: #555;
+        }
+    </style>
+
+  </head>
+  <body>
+
+  <!-- Make sure all your bars are the first things in your <body> -->
+<header class="bar-title">
+  <a class="button" href="#">
+    Left
+  </a>
+  <ul class="segmented-controller">
+    <li class="active">
+      <a href="#">Search</a>
+    </li>
+    <li>
+      <a href="#">You</a>
+    </li>
+    <li>
+      <a href="#">Discover</a>
+    </li>
+  </ul>
+  <a class="button" href="#">
+    Right
+  </a>
+</header>
+
+  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+  <div class="content">
+    <div class="content-padded">
+      <p class="welcome">Instructions</p>
+    </div>
+
+  <!-- search view -->
+  <h2>Search view</h2>
+    <form>
+      <input type="search" placeholder="Search">
+      <a class="button button-block">Find you</a>
+    </form>
+  <!-- end search-->
+
+  <!-- you view -->
+  <h2>You view</h2>
+  <form>
+    <div class="input-group">
+      <div class="input-row">
+        <label>Full name</label>
+        <input type="text" placeholder="Mister Ratchet">
+      </div>
+      <div class="input-row">
+        <label>Email</label>
+        <input type="email" placeholder="ratchetframework@gmail.com">
+      </div>
+      <div class="input-row">
+        <label>Username</label>
+        <input type="text" placeholder="goRatchet">
+      </div>
+    </div>
+  </form>
+
+  <h3>Projects</h3>
+  <ul class="list">
+  <li>
+    <a href="#">
+      Repository 1
+      <span class="chevron"></span>
+      <span class="count">4 watchers</span>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      Repository 2
+      <span class="chevron"></span>
+      <span class="count">1 watcher</span>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      Repository 3
+      <span class="chevron"></span>
+      <span class="count">5 watchers</span>
+    </a>
+  </li>
+</ul>
+  <!-- end you -->
+
+  <!-- discovery view -->
+  <h2>Discover view</h2>
+
+  <span class="count">1</span>
+  <span class="count-main">2</span>
+  <span class="count-positive">3</span>
+  <span class="count-negative">4</span>
+
+  <ul class="list">
+  <li>
+    <a href="#">
+      Repository 1
+      <span class="chevron"></span>
+      <span class="count">4 watchers</span>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      Repository 2
+      <span class="chevron"></span>
+      <span class="count">1 watcher</span>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      Repository 3
+      <span class="chevron"></span>
+      <span class="count">5 watchers</span>
+    </a>
+  </li>
+</ul>
+  <!-- end discovery-->
+
+  <!-- project page -->
+
+  <h2>Project individual view</h2>
+<ul class="list">
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li class="list-divider">List Divider</li>
+  <li>List item 3</li>
+</ul>
+  <!-- end project-->
+    
+
+  </div>
+
+  </body>
+</html>
