@@ -20,8 +20,9 @@ Ctrl = (function() {
     $scope.showForkBelt = 'yes';
 
     $scope.searchUrlPath = '/';
-    $scope.searchNotActive = '';
+    $scope.searchNotActive = 'x';
     $scope.aboutNotActive = 'x';
+    $scope.homeNotActive = '';
 
     $scope.searchPageSelected = function() {
       $scope.searchNotActive = '';
@@ -33,6 +34,12 @@ Ctrl = (function() {
 
       $scope.searchNotActive = 'x';
       $scope.aboutNotActive = '';
+    }
+
+    $scope.homePageSelected = function(){
+      $scope.homeNotActive = 'x';
+      $scope.searchNotActive = 'x';
+      $scope.aboutNotActive = 'x';
     }
 
     $scope.updateSearchUrl = function(urlPath) {

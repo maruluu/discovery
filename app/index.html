@@ -11,9 +11,13 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/main.css -->
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="components/pure/build/pure-min.css">
+    <link rel="stylesheet" href="styles/github.css">
     <link rel="stylesheet" href="styles/search-widget.css">
+
     <!-- endbuild -->
   </head>
   <body ng-controller="ctrl.App">
@@ -28,45 +32,56 @@
 
 <!--temp-->
 
-<h2>Discovery - recommending you relevant projects</h2>
-<p>
-<h3>Instructions</h3>
-<ul>
-  <li>Enter in your GitHub username, hit Search</li>
-  <li>Click 'View Recommendations'</li>
-  <li>Should you need to, you can select repos to view more info about them inside the app</li>
-</ul>
-</p>
 
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+
+
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+
+      <div class="navbar navbar-fixed-top bs-docs-nav">
+        <div class="container">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Discovery</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="{{searchNotActive}}active"><a href="#"><i class="icon-search icon-white"></i> Search</a></li>
+                <li class="{{aboutNotActive}}active"><a href="#/about"><i class="icon-question-sign icon-white"></i> About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <!-- Begin page content -->
       <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li class="{{searchNotActive}}active"><a ng-href="#{{searchUrlPath}}"><i class="icon-search icon-white"></i> Search</a></li>
-            <li class="{{aboutNotActive}}active"><a href="#/about"><i class="icon-question-sign icon-white"></i> About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+        <div id="github-app" ng-view ng-animate=" 'animate' "></div>
       </div>
     </div>
-  </div>  
 
-  <!--end temp-->
-
-  <div class="container">
-    <div id="github-app" ng-view></div>
-  </div>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">A small app by Addy Osmani.</p>
+      </div>
+    </div>
 
 
 
     <!-- Angular resources -->
-    <script src="components/angular/angular.js"></script>
+   <!-- <script src="components/angular/angular.js"></script>-->
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+
     <script src="components/angular-resource/angular-resource.js"></script>
 
     <!-- build:js scripts/scripts.js -->
@@ -75,6 +90,9 @@
     <script src="scripts/services/Github.js"></script>
     <script src="scripts/services/Recommendations.js"></script>
     <script src="scripts/directives/Github.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

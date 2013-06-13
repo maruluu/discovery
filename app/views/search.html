@@ -1,20 +1,37 @@
 
 
 <div class="discovery-search">
+    <h3>Enter GitHub username:</h3>
+    <form class="form-horizontal" ng-submit="searchAction()">
+      <span>Username: </span>
+		<input type="text" placeholder="e.g addyosmani" ng-model="searchField">
+      <button type="submit" class="btn btn-orange"><i class="icon-search"></i> Search</button>
+    </form>
+</div>
 
-	    <div class="pure-g-r">
-	        <div class="pure-u-2-3 text-box">
 
-				    <h3>Enter your GitHub username (or organization name) to begin:</h3>
+<div class="discovery-suggestions container">
+	<h3>Examples:</h3>
 
-				    <form class="pure-form form-search" ng-submit="searchAction()">
-				      <span>Username: </span>
-						<input type="text" class="pure-input-rounded pure-input-1-2" ng-model="searchField">
-				      <button type="submit" class="pure-button pure-button-primary"><i class="icon-search"></i> Search</button>
-				    </form>
+	<div class="row">
+		<div class="span12">
+			<div class="suggested-user span3">
+				<img src="img/github_square_gray-64.png" class="img-thumbnail">
+				<strong><a href="#/github/paulirish">Paul Irish</a></strong>
+			</div>
 
-	        </div>
-	    </div>
+			<div class="suggested-user span3">
+				<img src="img/github_square_gray-64.png" class="img-thumbnail">
+				<strong><a href="#/github/slightlyoff">Alex Russell</a></strong>
+			</div>
+
+			<div class="suggested-user span3">
+				<img src="img/github_square_gray-64.png" class="img-thumbnail">
+				<strong><a href="#/github/jakearchibald">Jake Archibald</a></strong>
+			</div>
+
+		</div>
+	</div>
 
 </div>
 
