@@ -1,12 +1,17 @@
 <ul class="breadcrumb">
-  <li><i class="icon-search"></i> <a href="#">Search Other</a> <span class="divider">/</span></li>
+  <li><i class="icon-search"></i> <a href="#">Search again</a> <span class="divider">/</span></li>
   <li class="active">{{user.data.login}}</li>
   <p class="pull-right"><a href="{{user.data.html_url}}" target="_blank">View on GitHub</a> <i class="icon-eye-open"></i></p>
 </ul>
 
+
+
 <!-- @begin: user info row -->
 <div class="row-fluid">
   
+  <h2>Your GitHub Profile</h2>
+  <a class="btn btn-primary" href="#/{{user.data.login}}/recommendations">Discover Recommendations</a>
+
   <!-- @begin: avatar / login / name -->
   <div class="user-login">
     <div>
@@ -16,7 +21,6 @@
     </div>
     <div>
       <h2>{{user.data.login}}</h2>
-      <a href="#/{{user.data.login}}/recommendations">View Recommendations</a>
       <h2 ng-show="user.data.name"><small>({{user.data.name}})</small></h2>
 
     </div>
