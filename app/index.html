@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="assets/ico/favicon.png">
 
 
-
+<!-- http://jsfiddle.net/pkozlowski_opensource/uKXZX/2/ -->
     <!-- Wrap all page content here -->
     <div id="wrap">
 
@@ -56,6 +56,9 @@
           <div class="nav-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="{{searchNotActive}}active"><a href="#"><i class="icon-search icon-white"></i> Search</a></li>
+                <li><a href="https://plus.google.com/share?url={{location.absUrl()}}" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Share</a>
+</li>
                 <li class="{{aboutNotActive}}active"><a href="#/about"><i class="icon-question-sign icon-white"></i> About</a></li>
             </ul>
           </div><!--/.nav-collapse -->
