@@ -1,6 +1,8 @@
 <div class="discovery-suggestions container">
 	<h3>Examples:</h3>
 
+
+<!--
 	<div class="row">
 		<div class="span12">
 			<div class="suggested-user span3">
@@ -19,6 +21,32 @@
 			</div>
 
 		</div>
-	</div>
+	</div>-->
+
+
+
+<!--contributors-->
+<div class="contributor-entry">
+
+  <ul class="contributors">
+      <li class="contributor" ng-repeat="contributor in contributors.data">
+        <a class="avatar" ng-href="#/github/{{contributor.login}}/" title="{{contributionsTitle(contributor)}}">
+
+            <img alt="{{contributor.login}}'s avatar" ng-src="{{contributor.avatar_url}}" />
+
+            <span class="contributor-name">{{contributor.login}}</span>
+
+        </a>
+      </li>
+  </ul>
 
 </div>
+<!--end contributors-->
+
+
+</div>
+
+
+
+
+
