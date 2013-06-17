@@ -2,3 +2,12 @@
     background:black;
     color:white;
 }
+
+.discovery-search{
+  width:90%;
+}
+
+.discovery-search .icon{
+  width:30%;
+  margin:0 auto;
+}
