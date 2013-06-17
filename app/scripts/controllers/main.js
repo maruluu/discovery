@@ -40,6 +40,8 @@ Ctrl = (function() {
       $scope.homeNotActive = 'x';
       $scope.searchNotActive = 'x';
       $scope.aboutNotActive = 'x';
+
+      console.log('homepage selected');
     }
 
     $scope.updateSearchUrl = function(urlPath) {
@@ -56,9 +58,27 @@ Ctrl = (function() {
 
   //-----------------------------------------------------------------
 
-  Ctrl.prototype.Search = function($scope, $location) {
+  Ctrl.prototype.Search = function($scope, $location, GithubResource) {
     // access parent scope function
     $scope.updateSearchUrl('/');
+
+    ////
+    var userParam = 'html5rocks'
+      , repoParam = 'www.html5rocks.com'
+      , urlPath = ['', 'github', userParam, repoParam, ''].join('/');
+
+    // access parent scope function
+    $scope.updateSearchUrl(urlPath);
+
+     GithubResource.get({
+      'query': 'repos',
+      'user': userParam,
+      'repo': repoParam,
+      'spec': 'contributors'
+    }, function(res) {
+      $scope.contributors = res;
+    });  
+    ////
 
     $scope.searchAction = function() {
 
@@ -77,6 +97,13 @@ Ctrl = (function() {
   }
 
   //-----------------------------------------------------------------
+
+  Ctrl.prototype.Home = function(customScopeName) {
+    // access parent scope function
+    customScopeName.homePageSelected();
+    customScopeName.pageName = 'Discovery';
+  }
+
 
   // custom parameter scope name
   Ctrl.prototype.About = function(customScopeName) {
@@ -231,7 +258,6 @@ Ctrl = (function() {
     // access parent scope function
     $scope.updateSearchUrl(urlPath);
     
-    console.log( urlPath );
 
     // blocking code
     /*

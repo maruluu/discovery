@@ -40,6 +40,14 @@ body {
   }
 }
 
+
+@media (max-width: 500px) {
+  .user-info{
+    display:none;
+  }
+}
+
+
   
 /* Top nav and header
 -------------------------------------------------- */

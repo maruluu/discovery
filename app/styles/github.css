@@ -14,26 +14,26 @@
 }
 
 
-  #wrap > .container {
-    padding: 60px 15px 0;
-  }
-  .container .credit {
-    margin: 20px 0;
-  }
 
-  code {
-    font-size: 80%;
-  }
-
-.discovery-search{
-  width:90%;
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
 }
 
-.discovery-search .icon{
-  width:30%;
-  margin:0 auto;
+code {
+  font-size: 80%;
 }
 
+
+#github-app .repositories{
+  margin:5px;
+}
+
+#github-app .repositories li{
+  list-style-type: none;
+}
 
 #github-app .tab-content{
   clear:both;

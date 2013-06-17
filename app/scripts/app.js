@@ -2,8 +2,6 @@
 
 angular.module('discoverApp', ['GithubService', 'GithubComponents', 'Recommendations'])
   .config(function ($routeProvider) {
-
-
     $routeProvider
       .when('/', {
         templateUrl: 'views/search.html',
@@ -31,5 +29,3 @@ angular.module('discoverApp', ['GithubService', 'GithubComponents', 'Recommendat
   }).run(function($rootScope, $location) {
     $rootScope.location = $location;
 });
-
-
