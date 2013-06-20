@@ -62,12 +62,15 @@ Ctrl = (function() {
     // access parent scope function
     $scope.updateSearchUrl('/');
 
-    ////
+
+
+/*
+re-enable for dynamic list on homepage
+
     var userParam = 'html5rocks'
       , repoParam = 'www.html5rocks.com'
       , urlPath = ['', 'github', userParam, repoParam, ''].join('/');
 
-    // access parent scope function
     $scope.updateSearchUrl(urlPath);
 
      GithubResource.get({
@@ -78,7 +81,7 @@ Ctrl = (function() {
     }, function(res) {
       $scope.contributors = res;
     });  
-    ////
+ */
 
     $scope.searchAction = function() {
 
@@ -87,6 +90,7 @@ Ctrl = (function() {
       
       if (keyword.length !== 0 && keyword !== undefined && keyword !== "undefined"){
         console.log('search user: ' + keyword);
+        
         $location.path(['', 'github', keyword, ''].join('/'));        
       }else{
         console.log('No user supplied');

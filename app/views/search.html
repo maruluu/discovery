@@ -1,19 +1,42 @@
 
 
 
-<!-- search field -->
+
+<div id="welcome">
+	<div class="container">
+		<h2>Welcome!</h2>
+
+		<p>To start using Discovery we just need to know a GitHub username you would like to use.</p>
+
+<!--
+		 <div ng-include="'views/search/input.html'"></div>
+-->
+
 <div class="discovery-search">
     <h3>Enter GitHub username:</h3>
     <form class="form-horizontal" ng-submit="searchAction()">
 	<div class="input-group col col-lg-7">
 	  <input type="text" placeholder="e.g addyosmani" ng-model="searchField">
 	  <span class="input-group-btn">
-	    <button class="btn btn-search" type="button">Go!</button>
+	    <input type="submit" class="btn btn-search" value="Go"/>
 	  </span>
 	</div>
     </form>
 </div>
 
 
+		 <div ng-include="'views/search/examples.html'"></div>
+	</div>
+</div>
+
+
+
+<!-- search field -->
+<!--
+ <div ng-include="'views/search/input.html'"></div>
+-->
+
 <!-- include suggestions -->
+<!--
  <div ng-include="'views/search/examples.html'"></div>
+-->
